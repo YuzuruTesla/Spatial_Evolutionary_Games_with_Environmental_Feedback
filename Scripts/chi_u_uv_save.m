@@ -1,4 +1,4 @@
-% Script generates Figure 6(a), which illustrates the corresponding decrease in density of L-type u and increase 
+% Script generates Figure 6(b), which illustrates the corresponding decrease in density of L-type u and increase 
 % in density of H-type v as chi_u increases from 0.05 to 0.1. 
 % 
 % To ensure the reliability of our results, we loop over 50 distinct random seeds and calculate the average outcome. 
