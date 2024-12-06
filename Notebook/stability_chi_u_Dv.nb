@@ -10,39 +10,75 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    476757,       8711]
-NotebookOptionsPosition[    475098,       8677]
-NotebookOutlinePosition[    475491,       8693]
-CellTagsIndexPosition[    475448,       8690]
+NotebookDataLength[    481388,       8832]
+NotebookOptionsPosition[    479670,       8796]
+NotebookOutlinePosition[    480117,       8814]
+CellTagsIndexPosition[    480074,       8811]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell["\<\
-In this notebook, we calculate the critical sensitivity, chi_u^*, as a \
-function of the diffusivity of H-type individuals Dv and the wavenumber m, as \
-studied in Section 3.2.2 of the main text and Section B.3 of the appendix. \
-These calculations are used to produce Figure 2 and Figure 9, which are \
-generated using MATLAB. The results from this notebook are cross-verified \
+Cell[TextData[{
+ "In this notebook, we calculate the critical sensitivity, ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "58c3af65-ed22-4d67-bf3d-318de4374d2f"],
+ ", as a function of the diffusivity of H-type individuals ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["D", "TI"], 
+        StyleBox["v", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "D_v", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "d0a46400-8b5f-430c-8684-0022c7091a0b"],
+ " and the wavenumber ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["m", "TI"], TraditionalForm], "errors" -> {}, "input" -> "m", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b196e268-97cd-4c08-9969-b6b22b21cae2"],
+ ", as studied in Section 3.2.2 of the main text and Section B.3 of the \
+appendix. These calculations are used to produce Figure 2 and Figure 9, which \
+are generated using MATLAB. The results from this notebook are cross-verified \
 with the MATLAB scripts \[OpenCurlyDoubleQuote]chi_u_Dv_di.m\
 \[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]combine_chi_u.m\
-\[CloseCurlyDoubleQuote], ensuring consistency between the outputs.\
-\>", "Text",
+\[CloseCurlyDoubleQuote], ensuring consistency between the outputs."
+}], "Text",
  CellChangeTimes->{{3.942445723912931*^9, 3.942445974125472*^9}, {
-  3.942446018024797*^9, 3.942446026928562*^9}, {3.9424460690293093`*^9, 
-  3.942446333533196*^9}, {3.942446400837284*^9, 3.9424464382880983`*^9}, {
-  3.9424478520384283`*^9, 
-  3.942447855750431*^9}},ExpressionUUID->"4ff3564a-facc-490e-9130-\
+   3.942446018024797*^9, 3.942446026928562*^9}, {3.9424460690293093`*^9, 
+   3.942446333533196*^9}, {3.942446400837284*^9, 3.9424464382880983`*^9}, {
+   3.9424478520384283`*^9, 3.942447855750431*^9}, 3.942449097980401*^9, {
+   3.9424491536866426`*^9, 3.9424491614038363`*^9}, {3.942449207435864*^9, 
+   3.942449225633533*^9}},ExpressionUUID->"4ff3564a-facc-490e-9130-\
 b803d1d4b398"],
 
-Cell["\<\
-The first part analytically calculates the critical chi_u^* under the \
-equation detA=0, which corresponds to one of the stability conditions, detA>0.\
-\>", "Text",
+Cell[TextData[{
+ "The first part analytically calculates the critical ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "28690722-e4a7-47ad-9b26-9488eb994253"],
+ " under the equation detA=0, which corresponds to one of the stability \
+conditions, detA>0."
+}], "Text",
  CellChangeTimes->{{3.942446886484387*^9, 3.942446924216338*^9}, {
   3.942446989840952*^9, 3.942446994075036*^9}, {3.942447133812666*^9, 
-  3.942447256557691*^9}, {3.942448414464397*^9, 
-  3.9424484158143597`*^9}},ExpressionUUID->"36c62d3d-55f8-4c28-b1d6-\
+  3.942447256557691*^9}, {3.942448414464397*^9, 3.9424484158143597`*^9}, {
+  3.942449231622137*^9, 
+  3.9424492518420477`*^9}},ExpressionUUID->"36c62d3d-55f8-4c28-b1d6-\
 6df9ce40ea77"],
 
 Cell[CellGroupData[{
@@ -314,18 +350,64 @@ Cell[BoxData[
   "Out[701]=",ExpressionUUID->"56d7fd6c-d692-49e5-9376-8c998d2e09bf"]
 }, Open  ]],
 
-Cell["\<\
-In the second part, we use the results from the first part and combine them \
-with actual parameters to plot the minimum chi_u^*  as a function of \
-diffusivity Dv under detA=0. This result is consistent with Figure 2 and the \
-MATLAB script \[OpenCurlyDoubleQuote]chi_u_Dv_di.m\[CloseCurlyDoubleQuote]. \
-The algorithm involves looping over different values of Dv , and for each Dv \
-, iterating through different m values to identify the minimum chi_u^* across \
-the range of m.\
-\>", "Text",
+Cell[TextData[{
+ "In the second part, we use the results from the first part and combine them \
+with actual parameters to plot the minimum ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c1ee439b-2a3e-4025-a452-e6966dc0ed61"],
+ "  as a function of diffusivity ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["D", "TI"], 
+        StyleBox["v", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "D_v", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "29572270-ee30-493c-9c3a-6b6a7a6905d0"],
+ " under detA=0. This result is consistent with Figure 2 and the MATLAB \
+script \[OpenCurlyDoubleQuote]chi_u_Dv_di.m\[CloseCurlyDoubleQuote]. The \
+algorithm involves looping over different values of ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["D", "TI"], 
+        StyleBox["v", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "D_v", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "02542f0d-b11e-4500-9b99-8cef46fc0f0b"],
+ " , and for each ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["D", "TI"], 
+        StyleBox["v", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "D_v", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9132fbe5-7425-494b-95da-d4466f98a29a"],
+ " , iterating through different m values to identify the minimum ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "c54724e0-063f-4986-8bb6-344ac5f1e06e"],
+ " across the range of m."
+}], "Text",
  CellChangeTimes->{{3.9424472818466883`*^9, 3.942447343729183*^9}, {
   3.9424475567499647`*^9, 3.9424478478333607`*^9}, {3.942448359052064*^9, 
-  3.942448366796871*^9}},ExpressionUUID->"c045b242-b59f-4cc6-8f1a-\
+  3.942448366796871*^9}, {3.94244925585397*^9, 
+  3.94244929338735*^9}},ExpressionUUID->"c045b242-b59f-4cc6-8f1a-\
 4c50839ea5c8"],
 
 Cell[CellGroupData[{
@@ -4126,14 +4208,23 @@ Uwen8Ms/lija/jn2x5fzg7Lh/wMmsILq
   "Out[742]=",ExpressionUUID->"1dcfff8e-6490-4539-a3db-e8c8c72b1049"]
 }, Open  ]],
 
-Cell["\<\
-In the third part, we aim to analytically derive the expression for the \
-critical chi_u^* under the equation -1/2 (trA2-trA^2) trA+detA=0, which \
-corresponds to the other stability condition, -1/2 (trA2-trA^2) trA+detA>0.\
-\>", "Text",
+Cell[TextData[{
+ "In the third part, we aim to analytically derive the expression for the \
+critical ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b0a15427-5009-4c77-9f87-a9d873a6e463"],
+ " under the equation -1/2 (trA2-trA^2) trA+detA=0, which corresponds to the \
+other stability condition, -1/2 (trA2-trA^2) trA+detA>0."
+}], "Text",
  CellChangeTimes->{{3.942448009343687*^9, 3.9424482182153263`*^9}, {
-  3.942448406458962*^9, 
-  3.942448408819336*^9}},ExpressionUUID->"abcb13e9-1350-4989-a2c8-\
+  3.942448406458962*^9, 3.942448408819336*^9}, {3.9424493006207952`*^9, 
+  3.942449304311236*^9}},ExpressionUUID->"abcb13e9-1350-4989-a2c8-\
 2578317783b2"],
 
 Cell[CellGroupData[{
@@ -4521,19 +4612,47 @@ Cell[BoxData[
   "Out[760]=",ExpressionUUID->"29035a95-8f87-43b0-9ff3-e4d588d5afac"]
 }, Open  ]],
 
-Cell["\<\
-In the fourth part, we use the results derived in the third part and combine \
-them with actual parameters to plot the minimum chi_u^* as a function of \
-diffusivity Dv under the equation -1/2 (trA2-trA^2) trA+detA=0. This result \
-aligns with part of Figure 9 and the MATLAB script \
-\[OpenCurlyDoubleQuote]combine_chi_u.m\[CloseCurlyDoubleQuote]. The algorithm \
-follows the same approach as in the second part, with the only difference \
-being the use of the new expression for critical chi_u^*\
-\>", "Text",
+Cell[TextData[{
+ "In the fourth part, we use the results derived in the third part and \
+combine them with actual parameters to plot the minimum ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "409455f5-c888-4c9b-8121-5b21f2807c45"],
+ " as a function of diffusivity ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubscriptBox[
+        StyleBox["D", "TI"], 
+        StyleBox["v", "TI"]], TraditionalForm], "errors" -> {}, "input" -> 
+     "D_v", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "34e7fb74-a271-42cf-b769-71c0b2085e33"],
+ " under the equation -1/2 (trA2-trA^2) trA+detA=0. This result aligns with \
+part of Figure 9 and the MATLAB script \[OpenCurlyDoubleQuote]combine_chi_u.m\
+\[CloseCurlyDoubleQuote]. The algorithm follows the same approach as in the \
+second part, with the only difference being the use of the new expression for \
+critical ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       SubsuperscriptBox["\[Chi]", 
+        StyleBox["u", "TI"], "*"], TraditionalForm], "errors" -> {}, "input" -> 
+     "\\chi_u^*", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "9e7af641-afaa-40d4-a2a4-57f3b666e868"],
+ "."
+}], "Text",
  CellChangeTimes->{{3.942448287692128*^9, 3.942448342314269*^9}, {
   3.942448386895006*^9, 3.9424483928467417`*^9}, {3.942448425299006*^9, 
-  3.942448521121064*^9}, {3.942448552021463*^9, 
-  3.942448608911895*^9}},ExpressionUUID->"de281e45-0273-43d2-ab68-\
+  3.942448521121064*^9}, {3.942448552021463*^9, 3.942448608911895*^9}, {
+  3.942449311048077*^9, 
+  3.9424493305262537`*^9}},ExpressionUUID->"de281e45-0273-43d2-ab68-\
 e9455f7516ce"],
 
 Cell[CellGroupData[{
@@ -8677,6 +8796,8 @@ i0a+cyNI2VnrzPKRZxbvvgr5O5vUp/E3jfznRrh/Y/OXVt81+B9xyflt
 },
 WindowSize->{811, 795},
 WindowMargins->{{Automatic, 300}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
 FrontEndVersion->"14.1 for Mac OS X ARM (64-bit) (July 16, 2024)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"d6e84e88-909b-4933-ada7-681cd62f119d"
@@ -8692,26 +8813,26 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 927, 15, 121, "Text",ExpressionUUID->"4ff3564a-facc-490e-9130-b803d1d4b398"],
-Cell[1484, 37, 446, 8, 55, "Text",ExpressionUUID->"36c62d3d-55f8-4c28-b1d6-6df9ce40ea77"],
+Cell[554, 20, 1995, 41, 121, "Text",ExpressionUUID->"4ff3564a-facc-490e-9130-b803d1d4b398"],
+Cell[2552, 63, 829, 18, 55, "Text",ExpressionUUID->"36c62d3d-55f8-4c28-b1d6-6df9ce40ea77"],
 Cell[CellGroupData[{
-Cell[1955, 49, 3716, 109, 254, "Input",ExpressionUUID->"3dcb239b-3959-4550-aa3c-28ba0e53887c"],
-Cell[5674, 160, 5565, 153, 321, "Output",ExpressionUUID->"56d7fd6c-d692-49e5-9376-8c998d2e09bf"]
+Cell[3406, 85, 3716, 109, 254, "Input",ExpressionUUID->"3dcb239b-3959-4550-aa3c-28ba0e53887c"],
+Cell[7125, 196, 5565, 153, 321, "Output",ExpressionUUID->"56d7fd6c-d692-49e5-9376-8c998d2e09bf"]
 }, Open  ]],
-Cell[11254, 316, 731, 12, 99, "Text",ExpressionUUID->"c045b242-b59f-4cc6-8f1a-4c50839ea5c8"],
+Cell[12705, 352, 2431, 58, 99, "Text",ExpressionUUID->"c045b242-b59f-4cc6-8f1a-4c50839ea5c8"],
 Cell[CellGroupData[{
-Cell[12010, 332, 13954, 422, 1431, "Input",ExpressionUUID->"5a75d176-8e9e-4ddc-89d0-c5cdb4a2f978"],
-Cell[25967, 756, 201294, 3369, 248, "Output",ExpressionUUID->"1dcfff8e-6490-4539-a3db-e8c8c72b1049"]
+Cell[15161, 414, 13954, 422, 1431, "Input",ExpressionUUID->"5a75d176-8e9e-4ddc-89d0-c5cdb4a2f978"],
+Cell[29118, 838, 201294, 3369, 248, "Output",ExpressionUUID->"1dcfff8e-6490-4539-a3db-e8c8c72b1049"]
 }, Open  ]],
-Cell[227276, 4128, 424, 8, 55, "Text",ExpressionUUID->"abcb13e9-1350-4989-a2c8-2578317783b2"],
+Cell[230427, 4210, 804, 17, 55, "Text",ExpressionUUID->"abcb13e9-1350-4989-a2c8-2578317783b2"],
 Cell[CellGroupData[{
-Cell[227725, 4140, 4404, 131, 356, "Input",ExpressionUUID->"430bb68e-1a66-48b3-8a2b-43479ad118eb"],
-Cell[232132, 4273, 9617, 247, 302, "Output",ExpressionUUID->"29035a95-8f87-43b0-9ff3-e4d588d5afac"]
+Cell[231256, 4231, 4404, 131, 356, "Input",ExpressionUUID->"430bb68e-1a66-48b3-8a2b-43479ad118eb"],
+Cell[235663, 4364, 9617, 247, 302, "Output",ExpressionUUID->"29035a95-8f87-43b0-9ff3-e4d588d5afac"]
 }, Open  ]],
-Cell[241764, 4523, 793, 13, 99, "Text",ExpressionUUID->"de281e45-0273-43d2-ab68-e9455f7516ce"],
+Cell[245295, 4614, 1834, 41, 99, "Text",ExpressionUUID->"de281e45-0273-43d2-ab68-e9455f7516ce"],
 Cell[CellGroupData[{
-Cell[242582, 4540, 20511, 589, 1481, "Input",ExpressionUUID->"7e30f923-d84e-4768-b099-ff582f6f3cc2"],
-Cell[263096, 5131, 211986, 3543, 252, "Output",ExpressionUUID->"45d40206-0c77-4c68-8b55-665a5b74cf35"]
+Cell[247154, 4659, 20511, 589, 1481, "Input",ExpressionUUID->"7e30f923-d84e-4768-b099-ff582f6f3cc2"],
+Cell[267668, 5250, 211986, 3543, 252, "Output",ExpressionUUID->"45d40206-0c77-4c68-8b55-665a5b74cf35"]
 }, Open  ]]
 }
 ]
