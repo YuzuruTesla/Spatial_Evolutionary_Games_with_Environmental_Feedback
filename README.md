@@ -20,3 +20,4 @@ For reference, below is a list of figures and the scripts that were used to gene
 - Figure 7(d): Run max_chi_u_small.m to generate the data file average_max_f_small.csv and figure. Alternatively, run file_max_fLH_small.m with the average_max_f_small.csv file to produce the figure.
 - Figure 8(a): Run meta.m
 - Figure 8(b): Run meta_heatmap.m
+- Figure 9: Run combine_chi_u.m
