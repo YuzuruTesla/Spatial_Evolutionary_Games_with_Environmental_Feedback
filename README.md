@@ -1,6 +1,6 @@
 # Spatial_Evolutionary_Games_with_Environmental_Feedback
 
-This repository accompanies the preprint "Spatial Pattern Formation in Eco-Evolutionary Games with Environment-Driven Motion",by Tianyong Yao and Daniel B. Cooney. It will include all of the scripts used to generate the figures in the paper. It includes all of the scripts used to generate all of the figures in the paper.
+This repository accompanies the preprint "Spatial Pattern Formation in Eco-Evolutionary Games with Environment-Driven Motion",by Tianyong Yao and Daniel B. Cooney. It includes all of the scripts used to generate all of the figures in the paper.
 
 The repository is organized into three folders: Scripts, Figures, and Simulation Outputs. All of the scripts can be run using MATLAB_R2024a.
 
